@@ -1,0 +1,44 @@
+{
+  "name": "autopsy-engine",
+  "version": "0.1.0",
+  "description": "Document forensics engine: authenticity, tampering and compliance analysis for PDF and DOCX files.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "autopsy": "./dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18.17"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "prepare": "npm run build"
+  },
+  "keywords": ["document-forensics", "pdf", "docx", "fraud-detection", "tampering", "compliance"],
+  "dependencies": {
+    "diff": "^7.0.0",
+    "jszip": "^3.10.1",
+    "mammoth": "^1.8.0",
+    "pdf-parse": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/diff": "^5.2.2",
+    "@types/node": "^22.7.4",
+    "@types/pdf-parse": "^1.1.5",
+    "typescript": "^5.6.2",
+    "vitest": "^3.2.4"
+  }
+}
